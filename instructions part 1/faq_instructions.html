@@ -1,0 +1,286 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Frequently Asked Questions
+ </h1>
+ <p>
+ </p>
+ <p>
+  First of all, you should probably consult the
+  <a href="http://www.nand2tetris.org/software/HDL%20Survival%20Guide.html">
+   HDL survival guide
+  </a>
+  . It has some good explanations on various aspects of the HDL language and specifications.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    How do I edit HDL files?
+   </p>
+  </li>
+ </ul>
+ <p>
+  You should edit HDL files using your favorite text editor. Once they are ready to be tested, you should open them using the supplied Hardware Simulator.
+ </p>
+ <p>
+  Every operating system comes with a simple text editor: Windows has Notepad, Mac has TextEdit. You might want to use more sophisticated text editors like
+  <a href="https://notepad-plus-plus.org">
+   Notepad++
+  </a>
+  or
+  <a href="http://gedit.en.softonic.com">
+   Gedit
+  </a>
+  for Windows, or one of these
+  <a href="http://stackoverflow.com/questions/20533/mac-text-code-editor">
+   recommended text editors for Mac
+  </a>
+  .
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    When I design chips, do I need to do it using only NAND gates?
+   </p>
+  </li>
+ </ul>
+ <p>
+  You
+  <strong>
+   should
+  </strong>
+  use chips you previously built when designing later chips. What we mean by "using only NAND gates" is that these are the elementary building blocks. But once you arranged these elementary building blocks into more sophisticated chips, you are encouraged to use the sophisticated chips in the future.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Can I use loops to create multi-bit chips?
+   </p>
+  </li>
+ </ul>
+ <p>
+  There are no looping constructs in the HDL language. If you want to use several chips, you must explicitly write each one of them.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the error message "Chip name doesn't match the HDL name".
+   </p>
+  </li>
+ </ul>
+ <p>
+  Make sure the name of your file and the name of the chip in the first line of your chip are the same. Names are case sensitive, so "chipname" is not the same as "ChipName".
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the message "Loading chip...", but the file won't load.
+   </p>
+  </li>
+ </ul>
+ <p>
+  This could happen if you are trying to use a chip within itself. For example, if you try to use the And chip in the PARTS section of the And.hdl file. This makes a recursive loop.
+ </p>
+ <p>
+  The rule is that you can only use parts which have already been built. The only part you can use in your Not.hdl is Nand. Once you have written and tested your Not, you then have Nand and Not available so you can use both of them when writing your And.hdl. Then you will have Nand, Not and And available to write Or.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the error message "Chip YourChipName is not found in the working and built in folders".
+   </p>
+  </li>
+ </ul>
+ <p>
+  This means you tried to use a chip which isn't included in your submission. If you want to use helper chips, you must submit a zip file containing them.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the error message "The specified sub bus is not in the bus range".
+   </p>
+  </li>
+ </ul>
+ <p>
+  This probably means you tried to access bus[16]. Bus wires are numbered beginning with 0, so a 16-bit bus will start with bus[0] and end with bus[15]. Trying to access bus[16] is out of range.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the error message "sub bus of an internal node may not be used".
+   </p>
+  </li>
+ </ul>
+ <p>
+  Read the "Sub-busing" and "Multiple Outputs" sections in the
+  <a href="http://www.nand2tetris.org/software/HDL%20Survival%20Guide.html">
+   HDL survival guide
+  </a>
+  .
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the error message "in is not a pin in Nand".
+   </p>
+  </li>
+ </ul>
+ <p>
+  The interface of Nand is:
+ </p>
+ <p>
+  Nand(a= ,b= ,out= );
+ </p>
+ <p>
+  It has 2 input pins (a, b) and 1 output pin (out). You should fill in the right hand side of these assignments with the  in and out values of the Not gate.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get a comparison error for Mux4way16.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Hardware bits are ordered from right to left. So sel[0] is the rightmost digit of the number. If sel=01, then sel[0]=1 and sel[1]=0. You can read more about it in the "Bit Numbering and Bus Syntax" section of the
+  <a href="http://www.nand2tetris.org/software/HDL%20Survival%20Guide.html">
+   HDL survival guide
+  </a>
+  .
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the error message "Can't connect gate's output pin to part".
+   </p>
+  </li>
+ </ul>
+ <p>
+  Read the "Multiple Outputs" section in the
+  <a href="http://www.nand2tetris.org/software/HDL%20Survival%20Guide.html">
+   HDL survival guide
+  </a>
+  .
+ </p>
+ <p>
+  Here is an example for when you want the final output to come out of MyChip, and also reuse some of the output:
+ </p>
+ <pre>MyChip(a=a, b=b, out=out, out[0..7]=smallerInternalBus, out[0]=internalNode);</pre>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    How do I wire a constant value (0 or 1) into a pin?
+   </p>
+  </li>
+ </ul>
+ <pre>MyChip(..., a=false, ...);
+MyChip(..., a=true, ...);</pre>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    When I run my "fill" program on the emulator, if the key is pressed for more than one second, the HACK screen starts to blink.
+   </p>
+  </li>
+ </ul>
+ <p>
+  This could be a problem with the keystrokes settings of your operating systems.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Mult.asm returns a comparison error.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Make sure you set R2 to zero at the beginning of the program.
+ </p>
+ <p>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    I get the error message "First file is shorter"
+   </p>
+  </li>
+ </ul>
+ <p>
+  You may have empty lines at the end of the program.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

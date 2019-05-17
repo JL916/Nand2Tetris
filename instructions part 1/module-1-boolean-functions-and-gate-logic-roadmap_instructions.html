@@ -1,0 +1,253 @@
+<meta charset="utf-8"/>
+<co-content>
+ <p>
+  <strong>
+   In a nutshell:
+  </strong>
+  We will start with a brief introduction of Boolean algebra, and learn how Boolean functions can be physically implemented using logic gates. We will then learn how to specify gates and chips using a
+  <em>
+   Hardware Description Language
+  </em>
+  (HDL), and how to simulate the behaviour of the resulting chip specifications using a
+  <em>
+   hardware simulator
+  </em>
+  . This background will set the stage for Project 1, in which you will build, simulate, and test 15 elementary logic gates. The chipset that you will build this module will be later used to construct the computer's
+  <em>
+   Arithmetic Logic Unit
+  </em>
+  (ALU) and memory system. This will be done in modules 2 and 3, respectively.
+ </p>
+ <p>
+  <strong>
+   Key concepts:
+  </strong>
+  Boolean algebra, Boolean functions, gate logic, elementary logic gates, Hardware Description Language (HDL), hardware simulation.
+ </p>
+ <p>
+  <strong>
+   WATCH:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Unit 1.1:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/BemaK/unit-1-1-boolean-logic">
+     Boolean Logic
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 1.2:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/zJKs1/unit-1-2-boolean-functions-synthesis">
+     Boolean Functions Synthesis
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 1.3:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/Aqrh6/unit-1-3-logic-gates">
+     Logic Gates
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 1.4:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/8VOXT/unit-1-4-hardware-description-language">
+     Hardware Description Language
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 1.5:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/jmAls/unit-1-5-hardware-simulation">
+     Hardware Simulation
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 1.6:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/935Ye/unit-1-6-multi-bit-buses">
+     Multi-Bit Buses
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 1.7:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/iyL0J/unit-1-7-project-1-overview">
+     Project 1 Overview
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 1.8:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/CNo2D/unit-1-8-perspectives">
+     Perspectives
+    </a>
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   DO:
+  </strong>
+ </p>
+ <p>
+  <a href="http://nand2tetris.org/01.php">
+   Project 1: Elementary Logic Gates
+  </a>
+  .
+ </p>
+ <p>
+  <strong>
+   Before starting to work on Project 1, make sure you read Appendix A of the book, and the HDL Survival Guide
+  </strong>
+  (links to these resources are given below).  There is no need to read these documents back to back. Rather, use them as technical references, on a need-to-know basis.  That is, if you have an HDL problem, consult these references first before posting a question in the forum.
+ </p>
+ <p>
+  The outcome of your work will be a set of text files, containing the HDL code of the 15 chips that you are expected to build. If you succeed building all 15 chips, great. If you manage to build only some of the chips, you can still submit them for partial credit.
+ </p>
+ <p>
+  To ensure proper testing and feedback, the names of the HDL files that you submit must be the exact file names that appear in the nand2tetris/projects/01 folder on your computer.
+  <em>
+   Note that case matters
+  </em>
+  : a file named and.hdl or AND.hdl may fail our testing and grading procedures (the correct name must be And.hdl). You can save yourself all this hustle by neither creating nor naming any files: simply edit the *.hdl files in your nand2tetris/projects/01 folder using any text editor, write your HDL code in them, and save them using their given names.
+ </p>
+ <p>
+  You should pack all the *.hdl files that you wrote as one zip file named project1.zip (pack the files themselves, don't put them inside any folders), and submit it. If you build helper chips that were not specified by the course, you should include them in the zip file. You have an unlimited number of submissions, and the grade will be the maximum of all your submissions, so you can't lose points by submitting again.
+ </p>
+ <p>
+  If you are taking the course as an auditor, you can check your work yourself, using the tests described
+  <a href="http://nand2tetris.org/01.php">
+   here
+  </a>
+  . If you are taking the certificate option, submit your project zip file
+  <a href="https://www.coursera.org/learn/build-a-computer/programming/dLtmy/project-1">
+   here
+  </a>
+  .
+ </p>
+ <p>
+  <strong>
+   READ
+  </strong>
+  :
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1QYDz9A3t9Q9P4yX-nPHvY7h2dUUQsRj9/view?usp=sharing" title="chapter 01">
+     Chapter 1
+    </a>
+    of
+    <em>
+     The Elements of Computing Systems
+    </em>
+    .
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1qzffR9le13QvR_w-JqY7RTsZU-b3eaFP/view?usp=sharing" title="appendix A">
+     Appendix A: Hardware Description Language (HDL)
+    </a>
+    of
+    <em>
+     The Elements of Computing Systems
+    </em>
+    (use as technical reference, when needed)
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://www.nand2tetris.org/hdl-survival-guide" title="HDL Survival Guide">
+     HDL Survival Guide,
+    </a>
+    written by Mark Armbrust (use as technical reference, when needed)
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://www.coursera.org/learn/build-a-computer/supplement/Dkosx/faq">
+     FAQ
+    </a>
+    , containing frequently asked questions by students. If you get an error message you can't solve, you should try looking here.
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   GET HELP:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <a href="https://www.coursera.org/learn/build-a-computer/module/4UT5w/discussions?sort=lastActivityAtDesc&amp;page=1">
+     Module 1 Discussion Forum
+    </a>
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+ <p>
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

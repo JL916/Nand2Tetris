@@ -1,0 +1,215 @@
+<meta charset="utf-8"/>
+<co-content>
+ <p>
+  <strong>
+   In a nutshell:
+  </strong>
+  Having built the computer's ALU, this module we turn to building the computer's
+  <em>
+   main memory
+  </em>
+  unit, also known as
+  <em>
+   Random Access Memory,
+  </em>
+  or
+  <em>
+   RAM
+  </em>
+  . This will be done gradually, going bottom-up from elementary flip-flop gates to one-bit registers to
+  <em>
+   n
+  </em>
+  -bit registers to a family of RAM chips. Unlike the computer's processing chips, which are based on
+  <em>
+   combinational logic
+  </em>
+  , the computer's memory logic requires a clock-based
+  <em>
+   sequential logic
+  </em>
+  . We will start with an overview of this theoretical background, and then move on to build our memory chipset.
+ </p>
+ <p>
+  <strong>
+   Key concepts:
+  </strong>
+  combinational vs sequential logic, clocks and cycles, flip-flops, registers, RAM units, counters.
+ </p>
+ <p>
+  <strong>
+   WATCH:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Unit 3.1:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/ssuag/unit-3-1-sequential-logic">
+     Sequential Logic
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 3.2:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/XZhdS/unit-3-2-flip-flops">
+     Flip Flops
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 3.3:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/57988/unit-3-3-memory-units">
+     Memory Units
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 3.4:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/eI75d/unit-3-4-counters">
+     Counters
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 3.5:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/xDREf/unit-3-5-project-3-overview">
+     Project 3 Overview
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Unit 3.6:
+    <a href="https://www.coursera.org/learn/build-a-computer/lecture/XtYPq/unit-3-6-perspectives">
+     Perspectives
+    </a>
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   DO:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <a href="http://nand2tetris.org/03.php" title="Project 3: Sequential Chips">
+     Project 3: Sequential Chips
+    </a>
+    .
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>
+     Submission instructions:
+    </strong>
+    note that the project 3 files are located in two folders named 'a' and 'b'. This technical detail speeds up the simulation and testing of the project 3 chips. However, when you submit your work in a zip file, put all the files together, and not inside any folders.
+   </p>
+  </li>
+  <li>
+   <p>
+    If you are taking the course as an auditor, you can check your work yourself, using the tests described
+    <a href="http://nand2tetris.org/03.php">
+     here
+    </a>
+    . If you are taking the certificate option, submit your project zip file
+    <a href="https://www.coursera.org/learn/build-a-computer/programming/jJYHw/project-3">
+     here
+    </a>
+    .
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   READ
+  </strong>
+  (optional):
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1GUzLwSP245qOZidf7X0KjrOlUvbUZ5Wa/view?usp=sharing" title="Chapter 03">
+     Chapter 3
+    </a>
+    of
+    <em>
+     The Elements of Computing Systems.
+    </em>
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   GET HELP:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <a href="https://www.coursera.org/learn/build-a-computer/module/2ixqc/discussions?sort=lastActivityAtDesc&amp;page=1">
+     Module 3 Discussion Forum
+    </a>
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+ <p>
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
