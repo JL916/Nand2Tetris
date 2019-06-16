@@ -7,3 +7,11 @@
     4. Machine Language
     5. Computer Architecture
     6. Assembler
+
+<br>
+<br>
+
+- 官方网站：[https://www.nand2tetris.org/](https://www.nand2tetris.org/)   
+- Coursera:   
+    Part1: [https://www.coursera.org/learn/build-a-computer](https://www.coursera.org/learn/build-a-computer)   
+    Part2: [https://www.coursera.org/learn/nand2tetris2](https://www.coursera.org/learn/nand2tetris2)
